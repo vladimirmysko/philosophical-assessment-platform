@@ -25,7 +25,7 @@ export function UploadFileForm({
   DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>,
   'children' | 'action'
 >) {
-  const [, formAction, pending] = useActionState(analyzeFileAction, undefined);
+  const [state, formAction, pending] = useActionState(analyzeFileAction, undefined);
 
   const [file, setFile] = useState<File | null>(null);
 
@@ -41,6 +41,8 @@ export function UploadFileForm({
         <h1 className="text-2xl font-semibold tracking-tight">Загрузите файл</h1>
         <p className="text-gray-11 text-xs">Загрузите работу для проверки в формате PDF.</p>
       </div>
+
+      {state?.errors && <p>{state.errors.server}</p>}
 
       <div className="grid grid-cols-1 gap-6">
         <div className="grid grid-cols-1 gap-2">
