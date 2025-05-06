@@ -1,3 +1,5 @@
+'use client';
+
 import { type ButtonHTMLAttributes, type DetailedHTMLProps } from 'react';
 
 import { cn } from '@/lib/utils';

@@ -1,3 +1,5 @@
+'use client';
+
 import type { SVGProps } from 'react';
 
 export function Logo(props: Omit<SVGProps<SVGSVGElement>, 'children'>) {

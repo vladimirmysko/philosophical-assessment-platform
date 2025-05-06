@@ -1,3 +1,5 @@
+'use client';
+
 import { type HTMLAttributes, type DetailedHTMLProps, type InputHTMLAttributes } from 'react';
 
 import { cn } from '@/lib/utils';
