@@ -132,6 +132,8 @@ export async function analyzeFileAction(_prevState: unknown, formData: FormData)
       };
     }
 
+    console.error('Error parsing form data:', error);
+
     return {
       success: false,
       errors: {
