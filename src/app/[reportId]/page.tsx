@@ -5,7 +5,6 @@ import { prisma } from '@/lib/prisma';
 
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
-import { RefreshButton } from '@/components/refresh-button';
 
 export async function generateMetadata({
   params,
