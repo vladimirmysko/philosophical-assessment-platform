@@ -1,5 +1,3 @@
-import 'server-only';
-
 import { PrismaClient } from '@prisma/client';
 
 // This approach prevents multiple PrismaClient instances during development
