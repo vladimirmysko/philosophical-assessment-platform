@@ -166,10 +166,7 @@ export default async function ReportPage({ params }: { params: Promise<{ reportI
             </table>
           </>
         ) : (
-          <div className="flex flex-col items-start gap-4">
-            <h2>Отчёт ещё не готов. Пожалуйста, подождите.</h2>
-            <RefreshButton>Обновить</RefreshButton>
-          </div>
+          <h2>Отчёт ещё не готов. Пожалуйста, подождите и перезагрузите страницу.</h2>
         )}
       </div>
     </main>
