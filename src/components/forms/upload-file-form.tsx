@@ -3,6 +3,7 @@
 import {
   useState,
   useActionState,
+  useEffect,
   type ChangeEvent,
   type DetailedHTMLProps,
   type FormHTMLAttributes,
@@ -33,6 +34,10 @@ export function UploadFileForm({
     setFile(e.target.files?.[0] || null);
   };
 
+  useEffect(() => {
+    console.log('state', state);
+  }, [state]);
+
   return (
     <form action={formAction} className={cn('grid grid-cols-1 gap-10', className)} {...props}>
       <Logo />
@@ -41,8 +46,6 @@ export function UploadFileForm({
         <h1 className="text-2xl font-semibold tracking-tight">Загрузите файл</h1>
         <p className="text-gray-11 text-xs">Загрузите работу для проверки в формате PDF.</p>
       </div>
-
-      {state?.errors && <p>{state.errors.server}</p>}
 
       <div className="grid grid-cols-1 gap-6">
         <div className="grid grid-cols-1 gap-2">
