@@ -26,17 +26,13 @@ export function UploadFileForm({
   DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>,
   'children' | 'action'
 >) {
-  const [state, formAction, pending] = useActionState(analyzeFileAction, undefined);
+  const [, formAction, pending] = useActionState(analyzeFileAction, undefined);
 
   const [file, setFile] = useState<File | null>(null);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFile(e.target.files?.[0] || null);
   };
-
-  useEffect(() => {
-    console.log('state', state);
-  }, [state]);
 
   return (
     <form action={formAction} className={cn('grid grid-cols-1 gap-10', className)} {...props}>

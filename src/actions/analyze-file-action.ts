@@ -57,7 +57,6 @@ async function analyzeFile(
   });
 
   if (!report) {
-    console.error('Report not found in the database');
     throw new Error('Report not found');
   }
 
@@ -112,11 +111,7 @@ export async function analyzeFileAction(_prevState: unknown, formData: FormData)
       });
     });
 
-    waitUntil(
-      analyzeFile({ ...data, id: report.id }, fileArrayBuffer).catch((error) => {
-        console.error('Error analyzing file:', error);
-      }),
-    );
+    waitUntil(analyzeFile({ ...data, id: report.id }, fileArrayBuffer));
 
     reportId = report.id;
   } catch (error) {
