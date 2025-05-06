@@ -1,4 +1,4 @@
-import { UploadFileForm } from '@/components/upload-file-form';
+import { UploadFileForm } from '@/components/forms/upload-file-form';
 
 export default function HomePage() {
   return (
